@@ -6,7 +6,7 @@ const constants = {
     PLAYER_STOPPED: 'playerStopped', 
   },
   playerOptions: {
-    filename:`./soundEffects/temp.wav`,
+    filename:`./soundEffects/tone1.wav`,
     
     gain: 10,
     debug: true,

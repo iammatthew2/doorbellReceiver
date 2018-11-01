@@ -5,19 +5,30 @@ const constants = {
     PLAYER_COMPLETED: 'playerCompleted',
     PLAYER_STOPPED: 'playerStopped', 
   },
-  sources: {
+  requests: {
     BACK_GATE_BELL: 'backGateBell', 
     FRONT_GATE_BELL: 'frontGateBell', 
     OTHER_BELL: 'otherBell',
+    MUTE_INTERVAL: 'muteInterval',
+    TURN_OFF: 'turnOff',
+    TURN_ON: 'turnOn',
   },
   playerOptions: {
     gain: 1,
     debug: true,
   },
   fileNames: {
-    backGateBell: `./soundEffects/tone1.wav`,
-    frontGateBell: `./soundEffects/tone1.wav`,
-    otherBell: `./soundEffects/tone1.wav`,
+    backGateBell: `./soundEffects/final.wav`,
+    frontGateBell: `./soundEffects/final.wav`,
+    otherBell: `./soundEffects/final.wav`,
+  },
+  serverStates: {
+    REQUESTS_ALLOWED: 'requestsAllowed',
+    REQUESTS_BLOCKED: 'requestsBlocked',
+  },
+  logTypes: {
+    INFO: 'info',
+    ERROR: 'error'
   },
 }
 

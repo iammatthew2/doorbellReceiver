@@ -10,7 +10,7 @@ playerInstance.on('stop', () => eventBus.emit(constants.events.PLAYER_STOPPED));
 playerInstance.on('complete', () =>
   eventBus.emit(constants.events.PLAYER_COMPLETED)
 );
-playerInstance.on('play', () => track(constants.logTypes.INFO, 'playing sound'));
+playerInstance.on('play', () => track(constants.logTypes.INFO, 'play', 'playing sound'));
 
 const stopPlaying = () => {
   if (playerInstance && playerInstance.stop) {

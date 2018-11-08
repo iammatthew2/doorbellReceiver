@@ -3,7 +3,9 @@ const constants = {
     BELL_RING: 'ringBell',
     PLAYER_STARTED: 'playerStarted',
     PLAYER_COMPLETED: 'playerCompleted',
-    PLAYER_STOPPED: 'playerStopped', 
+    PLAYER_STOPPED: 'playerStopped',
+    CRON_BED_TIME: 'cronBedTime',
+    CRON_MORNING_TIME: 'cronMorningTime',
   },
   requests: {
     BACK_GATE_BELL: 'backGateBell', 
@@ -12,14 +14,15 @@ const constants = {
     MUTE_INTERVAL: 'muteInterval',
     TURN_OFF: 'turnOff',
     TURN_ON: 'turnOn',
+    HEALTH_CHECK_PING: 'healthCheckPing',
   },
   playerOptions: {
     gain: 1,
     debug: true,
   },
   fileNames: {
-    backGateBell: `./soundEffects/final.wav`,
-    frontGateBell: `./soundEffects/final.wav`,
+    backGateBell: `./soundEffects/backBell.wav`,
+    frontGateBell: `./soundEffects/frontBell.wav`,
     otherBell: `./soundEffects/final.wav`,
   },
   serverStates: {

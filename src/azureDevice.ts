@@ -39,10 +39,10 @@ const ring = (request: DeviceMethodRequest, response: DeviceMethodResponse): voi
 
 const mute = () => {
   turnOff();
-  setTimeout(turnOn, 60000);
+  setTimeout(turnOn, 1800000);
 };
 
-const turnOff = () => {
+export const turnOff = () => {
   if (state === constants.serverStates.REQUESTS_ALLOWED) {
     track(INFO, 'turnOff','called successfully');
     state = constants.serverStates.REQUESTS_BLOCKED;
@@ -51,7 +51,7 @@ const turnOff = () => {
   }
 };
 
-const turnOn = () => {
+export const turnOn = () => {
   if (state === constants.serverStates.REQUESTS_BLOCKED) {
     track(INFO, 'turnOn', 'called successfully');
     state = constants.serverStates.REQUESTS_ALLOWED;
@@ -97,8 +97,6 @@ const connectCallback = function(err) {
   }
 };
 
-const listenForInvokedMethods = (): void => {
+export const listenForInvokedMethods = (): void => {
   client.open(connectCallback);
 };
-
-export default listenForInvokedMethods;

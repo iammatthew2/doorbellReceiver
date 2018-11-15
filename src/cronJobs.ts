@@ -11,7 +11,7 @@ Cronjob example times:
   9:20am: '20 9 * * *'
 */
 
-// 8:45am
+// 8:45pm
 const bedTimeJob = new CronJob('45 20 * * *', () =>
   eventBus.emit(constants.events.CRON_BED_TIME));
 
@@ -19,15 +19,21 @@ const bedTimeJob = new CronJob('45 20 * * *', () =>
 const morningTimeJob = new CronJob('45 7 * * *', () =>
   eventBus.emit(constants.events.CRON_MORNING_TIME));
 
-module.exports = {
-  scheduleBedTimeJob: () => {
-    if (!bedTimeJob.running) {
-      bedTimeJob.start();
-    }
-  },
-  scheduleMorningTimeJob: () => {
-    if (!morningTimeJob.running) {
-      morningTimeJob.start();
-    }
-  },
+const scheduleBedTimeJob = () => {
+  if (!bedTimeJob.running) {
+    bedTimeJob.start();
+  }
 };
+const scheduleMorningTimeJob =  () => {
+  if (!morningTimeJob.running) {
+    morningTimeJob.start();
+  }
+};
+
+const init = () => {
+  scheduleBedTimeJob();
+  scheduleMorningTimeJob();
+}
+
+export default init;
+

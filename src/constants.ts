@@ -19,6 +19,7 @@ const constants = {
   playerOptions: {
     gain: 1,
     debug: true,
+    device: 'default',
   },
   fileNames: {
     backGateBell: `./soundEffects/backBell.wav`,

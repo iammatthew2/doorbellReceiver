@@ -8,9 +8,13 @@ appInsights.start();
 
 const trackingClient = appInsights.defaultClient;
 
-function track(type, label, event) {
-  trackingClient.trackEvent({name: label, properties: { message: event }});
+function track(type, label, event): void {
   logger[type](`${event} - ${label}`);
+  try {
+    trackingClient.trackEvent({name: label, properties: { message: event }});
+  } catch(e) {
+    logger.error(`failed to fire tracking - error: ${e}`);
+  }
 }
 
 // one minute

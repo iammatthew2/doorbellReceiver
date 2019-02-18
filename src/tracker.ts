@@ -11,7 +11,7 @@ const trackingClient = appInsights.defaultClient;
 function track(type, label, event): void {
   logger[type](`${event} - ${label}`);
   try {
-    trackingClient.trackEvent({name: label, properties: { message: event }});
+    trackingClient.trackEvent({ name: label, properties: { message: event }});
   } catch(e) {
     logger.error(`failed to fire tracking - error: ${e}`);
   }
@@ -19,6 +19,7 @@ function track(type, label, event): void {
 
 // one minute
 setInterval(() => {
+  // todo: get rid of this or the other healthchck in azureDevice.ts
   track(constants.logTypes.INFO, 'healthCheck', 'doorbellReceiver');
 }, 60000);
 

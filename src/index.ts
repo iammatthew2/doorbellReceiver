@@ -8,10 +8,8 @@ import runScheduler from './cronJobs';
 
 runScheduler()
 listenForInvokedMethods();
-eventBus.on(constants.events.BELL_RING, e => {
-  playChime(e);
-});
 
+eventBus.on(constants.events.BELL_RING, e => playChime(e));
 eventBus.on(constants.events.CRON_BED_TIME, turnOff);
 eventBus.on(constants.events.CRON_MORNING_TIME, turnOn);
 

@@ -190,6 +190,4 @@ const tryToConnect = () => {
   setTimeout(() => client.open(connectCallback), delay);
 }
 
-export const listenForInvokedMethods = (): void => {
-  tryToConnect();
-};
+export const listenForInvokedMethods = (): void => tryToConnect();

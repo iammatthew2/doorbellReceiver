@@ -24,7 +24,7 @@ const scheduleBedTimeJob = () => {
     bedTimeJob.start();
   }
 };
-const scheduleMorningTimeJob =  () => {
+const scheduleMorningTimeJob = () => {
   if (!morningTimeJob.running) {
     morningTimeJob.start();
   }
